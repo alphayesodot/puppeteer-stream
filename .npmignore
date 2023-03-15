@@ -1,7 +1,6 @@
 examples/
 *.webm
 *.mp4
-src/
 examples
 tests/
 temp
