@@ -49,13 +49,13 @@ export async function launch(
 
 	addToArgs("--load-extension=", extensionPath);
 	addToArgs("--disable-extensions-except=", extensionPath);
-	addToArgs("--whitelisted-extension-id=", extensionId);
+	addToArgs("--allowlisted-extension-id=", extensionId);
 	addToArgs("--autoplay-policy=no-user-gesture-required");
 
 	if (opts.defaultViewport?.width && opts.defaultViewport?.height)
 		opts.args.push(`--window-size=${opts.defaultViewport.width}x${opts.defaultViewport.height}`);
 
-	opts.headless = false;
+	opts.headless = 'new';
 
 	let browser: Browser;
 	if (typeof arg1.launch == "function") {
